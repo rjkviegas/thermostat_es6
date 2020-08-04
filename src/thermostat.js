@@ -1,9 +1,13 @@
 'use strict';
+
 const _DEFAULT_TEMP = 20;
 const _MINIMUM_TEMP = 10;
+
 class Thermostat {
   constructor() {
     this.currentTemp = _DEFAULT_TEMP;
+    this.powerSavingMode = true;
+    this.maxTemp = 25;
   }
   tempUp() {
     this.currentTemp++;
@@ -14,5 +18,8 @@ class Thermostat {
     } else {
       this.currentTemp--;
     }
+  }
+  powerSavingModeSwitch() {
+    this.powerSavingMode = false;
   }
 }
