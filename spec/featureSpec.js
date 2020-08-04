@@ -21,5 +21,20 @@ describe('Thermostat', function() {
       thermostat.tempDown();
       expect(thermostat.currentTemp).toBe(19)
     });
+    it('cannot reduce the temperature below 10 degrees', function() {
+      thermostat.tempDown();
+      thermostat.tempDown();
+      thermostat.tempDown();
+      thermostat.tempDown();
+      thermostat.tempDown();
+      thermostat.tempDown();
+      thermostat.tempDown();
+      thermostat.tempDown();
+      thermostat.tempDown();
+      thermostat.tempDown();
+      expect(function() {
+        thermostat.tempDown();
+      }).toThrowError('cannot reduce temperature below 10 degrees');
+    })
   });
 });

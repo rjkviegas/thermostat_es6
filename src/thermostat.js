@@ -8,6 +8,10 @@ class Thermostat {
     this.currentTemp++;
   }
   tempDown() {
-    this.currentTemp--;
+    if (this.currentTemp === 10) {
+      throw new Error('cannot reduce temperature below 10 degrees');
+    } else {
+      this.currentTemp--;
+    }
   }
 }
