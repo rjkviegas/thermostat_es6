@@ -7,4 +7,7 @@ class Thermostat {
   tempUp() {
     this.currentTemp++;
   }
+  tempDown() {
+    this.currentTemp--;
+  }
 }
