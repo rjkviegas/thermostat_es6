@@ -10,10 +10,7 @@ describe('Thermostat', function() {
       expect(thermostat.currentTemp).toBe(_DEFAULT_TEMP);
     });
     it('powerSavingMode is on', function() {
-      expect(thermostat.powerSavingMode).toBeTruthy(); 
-    })
-    it('maximum temperature is 25 degrees', function() {
-      expect(thermostat.maxTemp).toBe(25);
+      expect(thermostat.isPowerSavingModeOn).toBeTruthy(); 
     })
   });
   describe('#tempUp', function() {
@@ -21,25 +18,46 @@ describe('Thermostat', function() {
       thermostat.tempUp();
       expect(thermostat.currentTemp).toBe(_DEFAULT_TEMP + 1);
     });
+    describe('cannot increase temperature over maximum temperature', function() {
+      it('in power saving mode', function() {
+        for ( var i = 0; i < (_MAX_TEMP_PSM_ON - _DEFAULT_TEMP + 1); i++)  {
+          thermostat.tempUp();
+        } 
+        expect(thermostat.currentTemp).toBe(_MAX_TEMP_PSM_ON)
+      })
+      it('when power saving mode off', function() {
+        thermostat.switchPowerSavingModeOff();
+        for ( var i = 0; i < (_MAX_TEMP_PSM_OFF - _DEFAULT_TEMP + 1); i++)  {
+          thermostat.tempUp();
+        } 
+        expect(thermostat.currentTemp).toBe(_MAX_TEMP_PSM_OFF)
+      })
+    })
   });
   describe('#tempDown', function() {
     it('decreases the currentTemp by 1 degree', function() {
       thermostat.tempDown();
       expect(thermostat.currentTemp).toBe(_DEFAULT_TEMP - 1)
     });
-    it('cannot reduce the temperature below 10 degrees', function() {
+    it(`cannot reduce the temperature below ${_MINIMUM_TEMP} degree`, function() {
       while (thermostat.currentTemp > _MINIMUM_TEMP) {
         thermostat.tempDown();
       }
-      expect(function() {
-        thermostat.tempDown();
-      }).toThrowError('cannot reduce temperature below 10 degrees');
+      thermostat.tempDown();
+      expect(thermostat.currentTemp).toBe(_MINIMUM_TEMP);
     });
   });
-  describe('#powerSavingModeSwitch', function() {
-    it('turns powerSavingMode to false', function() {
-      thermostat.powerSavingModeSwitch();
-      expect(thermostat.powerSavingMode).toBeFalsy();
+  describe('#switchPowerSavingModeOff', function() {
+    it('turns isPowerSavingModeOn to false', function() {
+      thermostat.switchPowerSavingModeOff();
+      expect(thermostat.isPowerSavingModeOn).toBe(false);
+    })
+  })
+  describe('switchPowerSavingModeOn', function() {
+    it('turn isPowerSavingModeOn to true', function() {
+      thermostat.switchPowerSavingModeOff();
+      thermostat.switchPowerSavingModeOn();
+      expect(thermostat.isPowerSavingModeOn).toBe(true);
     })
   })
 });
