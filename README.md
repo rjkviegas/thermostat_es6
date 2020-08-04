@@ -9,7 +9,7 @@ Testing: Jasmine 3.6.0
 
 ### Class Diagram
 
-[img src="class-diagram.png"]
+<img src="class-diagram.png"/>
 
 ### User Stories
 ```
