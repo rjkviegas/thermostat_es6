@@ -1,10 +1,10 @@
 'use strict';
-
+const _DEFAULT_TEMP = 20;
 class Thermostat {
   constructor() {
-    this._DEFAULT_TEMP = 20;
+    this.currentTemp = _DEFAULT_TEMP;
   }
-  currentTemp() {
-    return this._DEFAULT_TEMP;
+  tempUp() {
+    this.currentTemp++;
   }
 }

@@ -16,4 +16,12 @@ Testing: Jasmine 3.6.0
 As a User
 So I do not need to set the thermostat every time
 I want the default temperature to be 20 degrees
+
+As a User
+So I can control the temperature
+I want to be able to increase the temperature
+
+As a User
+So I can control the temperature
+I want to be able to decrease the temperature
 ```
