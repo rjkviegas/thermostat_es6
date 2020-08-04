@@ -22,16 +22,9 @@ describe('Thermostat', function() {
       expect(thermostat.currentTemp).toBe(19)
     });
     it('cannot reduce the temperature below 10 degrees', function() {
-      thermostat.tempDown();
-      thermostat.tempDown();
-      thermostat.tempDown();
-      thermostat.tempDown();
-      thermostat.tempDown();
-      thermostat.tempDown();
-      thermostat.tempDown();
-      thermostat.tempDown();
-      thermostat.tempDown();
-      thermostat.tempDown();
+      while (thermostat.currentTemp > 10) {
+        thermostat.tempDown();
+      }
       expect(function() {
         thermostat.tempDown();
       }).toThrowError('cannot reduce temperature below 10 degrees');
