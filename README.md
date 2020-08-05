@@ -41,6 +41,10 @@ As a User
 So I can increase the temperature when it is really cold
 If power saving mode is off, the maximum temperature is 32 degrees
 
+As a User 
+So I can reset the temperature easily
+I want there to be a reset button
+
 ```
 To do:
 

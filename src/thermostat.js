@@ -36,5 +36,8 @@ class Thermostat {
       return this.currentTemp === _MAX_TEMP_PSM_OFF;
     }
   }
+  resetTemp() {
+    this.currentTemp = _DEFAULT_TEMP;
+  }
 
 }

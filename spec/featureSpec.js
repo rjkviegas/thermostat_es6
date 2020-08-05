@@ -60,4 +60,11 @@ describe('Thermostat', function() {
       expect(thermostat.isPowerSavingModeOn).toBe(true);
     })
   })
+  describe('resetTemp', function() {
+    it(`sets the current temperature to ${_DEFAULT_TEMP}`, function() {
+      thermostat.tempUp();
+      thermostat.resetTemp();
+      expect(thermostat.currentTemp).toBe(_DEFAULT_TEMP);
+    })
+  })
 });
