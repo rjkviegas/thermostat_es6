@@ -65,3 +65,7 @@ Buttons:
 - resetTemp
 - powerSavingModeOn
 - powerSavingModeOff
+
+The flow of what happens when a user interaction happens:
+
+user input -> event listener -> update model -> update view to reflect change in model
