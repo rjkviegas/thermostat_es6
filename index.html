@@ -3,19 +3,34 @@
   <head>
     <title>Thermostat</title>
     <link rel="stylesheet" type="text/css" href="energy_usage.css">
-</head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
 <body>
-  <section>
-    <h1 id="temperature"></h1>
+    <header>
+      <h1> Thermostat </h1>
+    </header>
+    <section>
+      <h3>Current temperature: <span id="current-temperature"></span>&#8451;</h3>
+      <h1> <span id="temperature"></span>&#8451;</h1>
+    
     <p>
+      <button class="temp-button" id="temperature-up"><strong>+</strong></button>
+      <button class="temp-button" id="temperature-down"><strong>-</strong></button><br><br>
+      <button id="temperature-reset">RESET</button><br>
       <br>
-      <button id="temperature-up">+</button>
-      <button id="temperature-down">-</button>
-      <button id="temperature-reset">reset</button>
-      power saving mode is <span id="power-saving-status">on</span>
-      <button id="powersaving-on">PSM on</button>
-      <button id="powersaving-off">PSM off</button>
+      Power saving mode is: <span id="power-saving-status">ON</span><br>
+      <br>
+      <button class="psm-button" id="powersaving-on">PSM ON</button>
+      <button class="psm-button" id="powersaving-off">PSM OFF</button>
     </p>
+    <section>
+      <form id="select-city">
+        <input id="current-city" type="text" placeholder="Enter a city"></input>
+        <input type="submit"></input>
+      </form>
+      <h1>Current temperature in <span id="city-name"></span>: <br>
+        <span id="city-temperature">20</span>&#8451;</h1>
+    </section>
   </section>
   <script src="src/thermostat.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
