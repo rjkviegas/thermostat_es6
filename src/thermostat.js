@@ -39,5 +39,12 @@ class Thermostat {
   resetTemp() {
     this.currentTemp = _DEFAULT_TEMP;
   }
-
+  currentEnergyUsage() {
+    if (this.currentTemp < 18) {
+      return "low-usage"
+    } else if (this.currentTemp > 25) {
+      return "high-usage"
+    }
+    return "medium-usage"
+  }
 }

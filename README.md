@@ -45,12 +45,10 @@ As a User
 So I can reset the temperature easily
 I want there to be a reset button
 
+As a User
+So I know how much energy I am using
+I want to be able to ask what the current energy usage is
+
 ```
-To do:
-
-***Power saving mode is on by default*** but it can also be turned off
-You can reset the temperature to 20 with a reset function
-
-You can ask about the thermostat's current energy usage: < 18 is low-usage, <= 25 is medium-usage, anything else is high-usage.
 
 (In the challenges where we add an interface, low-usage will be indicated with green, medium-usage indicated with black, high-usage indicated with red.)
