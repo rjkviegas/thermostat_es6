@@ -52,3 +52,16 @@ I want to be able to ask what the current energy usage is
 ```
 
 (In the challenges where we add an interface, low-usage will be indicated with green, medium-usage indicated with black, high-usage indicated with red.)
+
+### Thermostat Interface
+
+Displayed:
+- currentTemp
+- currentEnergyUsage
+
+Buttons:
+- tempUp
+- tempDown
+- resetTemp
+- powerSavingModeOn
+- powerSavingModeOff
