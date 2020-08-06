@@ -15,7 +15,24 @@ header {
 }
 section {
   text-align: center;
-  padding-bottom: 2em;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+#temp-text {
+  /* float: right; */
+  margin: 0 0 0 0;
+  text-align: center;
+  /* width: 90%; */
+}
+#temp-diagram {
+  background: grey;
+  border: solid black;
+  left: 10%;
+  width: 10px;
+  height: 220px;
+  position: relative;
+  float: left;
 }
 #temperature {
   font-size: 50px;
