@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Thermostat</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="energy_usage.css">
     <link rel="stylesheet" type="text/css" href="index.css">
   </head>
@@ -9,22 +10,30 @@
     <header>
       <h1> Thermostat </h1>
     </header>
-    <section>
+    <div id="current-temp">
       <h3>Current temperature outside: <span id="current-temperature"></span>&#8451;</h3>
       <hr>
-      <div id="temp-text"><h1> <span id="temperature"></span>&#8451;</h1></div>
-      <div id="temp-diagram"></div>
-      <div id="buttons">
-        <button class="temp-button" id="temperature-up"><strong>+</strong></button>
-        <button class="temp-button" id="temperature-down"><strong>-</strong></button><br><br>
-        <button id="temperature-reset">RESET</button><br>
-        Power saving mode is: <span id="power-saving-status">ON</span><br>
-        <button class="psm-button" id="powersaving-on">PSM ON</button>
-        <button class="psm-button" id="powersaving-off">PSM OFF</button>
+    </div>
+    <div id="temp-text"><h1> <span id="temperature"></span>&#8451;</h1>
+    </div>
+    <br>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="62"
+      aria-valuemin="31" aria-valuemax="100" style="width:62%">
+        <!-- <div id="thermo-text">20&#8451;</div> -->
       </div>
-      <hr>
-    </section>
-    <section>
+    </div>
+    <br>
+    <div id="buttons">
+      <button class="temp-button" id="temperature-up"><strong>+</strong></button>
+      <button class="temp-button" id="temperature-down"><strong>-</strong></button><br><br>
+      <button id="temperature-reset">RESET</button><br>
+      Power saving mode is: <span id="power-saving-status">ON</span><br>
+      <button class="psm-button" id="powersaving-on">PSM ON</button>
+      <button class="psm-button" id="powersaving-off">PSM OFF</button>
+    </div>
+    <hr>
+    <section id="city-temp">
       <label> Choose a city to check the weather</label>
         <form id="select-city">
           <input id="current-city" type="text" placeholder="Enter a city"></input>
@@ -32,8 +41,12 @@
         </form>
       <h1>Current temperature in <span id="city-name"></span>: <span id="city-temperature"></span>&#8451;</h1>
     </section>
+  
+    <script
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="src/thermostat.js"></script>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="interface.js"></script>
 </body>
 </html>

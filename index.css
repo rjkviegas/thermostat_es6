@@ -13,30 +13,33 @@ header {
   border-bottom: 4px #000 solid;
   margin-bottom: 10px;
 }
-section {
+#current-temp {
+  text-align: center;
+}
+#buttons {
   text-align: center;
   margin-top: 5px;
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
 #temp-text {
-  /* float: right; */
   margin: 0 0 0 0;
   text-align: center;
-  /* width: 90%; */
-}
-#temp-diagram {
-  background: grey;
-  border: solid black;
-  left: 10%;
-  width: 10px;
-  height: 220px;
-  position: relative;
-  float: left;
 }
 #temperature {
   font-size: 50px;
   font-family: Arial;
+}
+#city-temp {
+  text-align: center;
+}
+.sr-class{
+  color:black;
+}
+#thermo-text#temperature {
+  font-size: 10px;
+  color: white;
+  padding-bottom: 10px;
 }
 .temp-button {
   font-size: 30px;
