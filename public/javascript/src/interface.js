@@ -5,6 +5,7 @@ $(document).ready(function() {
 
   $('#temperature-up').on('click', function() { // event listener
     thermostat.tempUp(); // update model
+    incr();
     updateTemperature();
   })
   $('#temperature-down').on('click', function() {
@@ -57,6 +58,11 @@ $(document).ready(function() {
     })
     $('#city-name').text(city)
   }
+
+  function incr() {
+    var v1=document.getElementsByClassName('progress-bar').value;
+    document.getElementsByClassName("progress-bar").value= v1 + 10;
+    }
 })
 
 
