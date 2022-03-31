@@ -9,4 +9,4 @@ gem 'sinatra'
 gem "rspec", group: :test
 gem "capybara", group: :test
 gem 'selenium-webdriver', group: :test
-gem "puma", "~> 4.3.5", group: :test
+gem "puma", "~> 4.3.12", group: :test
